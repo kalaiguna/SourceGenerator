@@ -6,7 +6,7 @@ namespace Main
     {
         public static void Run()
         {
-            Example foo = new(1, "lowertoupper");
+            MethodExample foo = new(1, "lowertoupper");
             // regular method
             foo.UserMethod();
 

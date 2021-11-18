@@ -14,7 +14,7 @@ namespace SourceGenerator
     {
         private const string attributeText = @"
         using System;
-        namespace GeneratedMethods
+        namespace MethodGenerator
         {
             [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
             [System.Diagnostics.Conditional(""MethodGenerator_DEBUG"")]
@@ -34,7 +34,7 @@ namespace SourceGenerator
                 return;
 
             // get the added attribute 
-            INamedTypeSymbol attributeSymbol = context.Compilation.GetTypeByMetadataName("GeneratedMethods.AddMethodsAttribute");
+            INamedTypeSymbol attributeSymbol = context.Compilation.GetTypeByMetadataName("MethodGenerator.AddMethodsAttribute");
 
             // generate the source for each class
             foreach (var type in receiver.Types)
@@ -117,7 +117,7 @@ namespace SourceGenerator
                 {
                     // Get the symbol being declared by the class, and keep it if its annotated
                     INamedTypeSymbol typeSymbol = context.SemanticModel.GetDeclaredSymbol(classDeclarationSyntax) as INamedTypeSymbol;
-                    if (typeSymbol.GetAttributes().Any(ad => ad.AttributeClass.ToDisplayString() == "GeneratedMethods.AddMethodsAttribute"))
+                    if (typeSymbol.GetAttributes().Any(ad => ad.AttributeClass.ToDisplayString() == "MethodGenerator.AddMethodsAttribute"))
                     {
                         Types.Add(typeSymbol);
                     }

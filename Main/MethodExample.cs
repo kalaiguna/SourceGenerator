@@ -1,14 +1,14 @@
 ﻿using System;
-using GeneratedMethods;
+using MethodGenerator;
 namespace Main
 {
     [AddMethods]
-    public partial class Example
+    public partial class MethodExample
     {
         public int Page { get; set; }
         public string Text { get; set; }
 
-        public Example(int page, string text)
+        public MethodExample(int page, string text)
         {
             Page = page;
             Text = text;
