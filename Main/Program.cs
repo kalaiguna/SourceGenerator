@@ -6,7 +6,7 @@ namespace Main
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("C# 10.0 Source Generator - Demo!");
+            Console.WriteLine(".NET 10 Source Generator - Demo!");
             Console.WriteLine("\nRunning Method Generator:\n");
             UseMethodGenerator.Run();
 
